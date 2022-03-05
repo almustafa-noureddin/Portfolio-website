@@ -37,7 +37,7 @@ SECRET_KEY = env('SECRET_KEY')
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 ALLOWED_HOSTS = ['almustafa.herokuapp.com','127.0.0.1']
-django_heroku.settings(locals())
+
 
 # Application definition
 
@@ -63,6 +63,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+django_heroku.settings(locals())
 
 ROOT_URLCONF = 'almustafa_website.urls'
 
