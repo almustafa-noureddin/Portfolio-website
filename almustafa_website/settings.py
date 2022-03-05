@@ -25,7 +25,7 @@ env = environ.Env(
 # Take environment variables from .env file
 #READ_DOT_ENV_FILE = env.bool('READ_DOT_ENV_FILE', default=False)
 #if READ_DOT_ENV_FILE:
-#    environ.Env.read_env()
+environ.Env.read_env()
 
 # False if not in os.environ because of casting above
 DEBUG = False
@@ -36,8 +36,8 @@ SECRET_KEY = env('SECRET_KEY')
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-ALLOWED_HOSTS = []
-django_heroku.settings(locals(), staticfiles=False, allowed_hosts=False)
+ALLOWED_HOSTS = ["*"]
+django_heroku.settings(locals())
 
 # Application definition
 
