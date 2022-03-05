@@ -36,8 +36,8 @@ SECRET_KEY = env('SECRET_KEY')
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-ALLOWED_HOSTS = []
-django_heroku.settings(locals())
+ALLOWED_HOSTS = ['almustafa.herokuapp.com']
+django_heroku.settings(locals(), staticfiles=False, allowed_hosts=False)
 
 # Application definition
 
