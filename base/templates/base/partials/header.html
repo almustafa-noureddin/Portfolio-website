@@ -1,0 +1,24 @@
+{% load static %}
+<!--===== HEADER =====-->
+<header class="l-header">
+    <nav class="nav bd-grid">
+        <div>
+            <a href="{% url 'base:home' %}" class="nav__logo">
+                <img src="{% static 'assets/img/img2.png'%}" alt="#"/>
+            </a>
+        </div>
+
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="{% url 'base:home' %}" class="nav__link active">Home</a></li>
+                <li class="nav__item"><a href="{% url 'base:projects' %}" class="nav__link">projects</a></li>
+                <li class="nav__item"><a href="{% url 'base:blogs' %}" class="nav__link">Blog</a></li>
+                <li class="nav__item"><a href="{% url 'base:contact' %}" class="nav__link">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+            <i class='bx bx-menu'></i>
+        </div>
+    </nav>
+</header>

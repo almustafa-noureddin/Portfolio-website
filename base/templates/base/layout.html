@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="{% block keywords %}{% endblock %}" />
+    
+    <meta name="description" content="{% block description %}{% endblock %}" />
+        <link id='favicon' rel="shortcut icon" href="{% static 'assets/img/favicon.ico'%}" type="image/x-png">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css'%}">
+
+        <!-- =====BOX ICONS===== -->
+        
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+        
+        <title>{% block title %}{%endblock %}</title>
+        {% block extend_header%}{%endblock%}
+    </head>
+  <body>
+   
+    {% include 'base/partials/header.html' %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% include 'base/partials/footer.html' %}
+
+    
+<!-- ================================
+    Start Scripts
+    ================================= -->
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="{% static 'assets/js/main.js'%}"></script>
+    
+    
+    <!-- ================================
+    End Scripts
+    ================================= -->
+    {% block extend_footer %}{%endblock%}
+  </body>
+</html>

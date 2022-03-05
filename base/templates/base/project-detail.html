@@ -1,0 +1,55 @@
+{% extends 'base/layout.html' %}
+{% load static %}
+
+<!-- ================================
+Start SEO blocks
+================================= -->
+{% block title %}AlMustafa | {{object.name}}{% endblock %}
+{% block decription %}This is a portfolio website for AlMustafa Noureddin.{% endblock %}
+{% block keywords %}AlMustafa,AlMustafa Noureddin,Portfolio,portfolio website,data engineering,data engineer,data analysis, django{% endblock %}
+<!-- ================================
+END SEO blocks
+================================= -->
+<!-- ================================
+Start page specific CSS blocks
+================================= -->
+{% block extend_header %}
+<link rel="stylesheet" href="{% static 'assets/css/detail.css'%}">
+{% endblock %}
+<!-- ================================
+END page specific CSS blocks
+================================= -->
+
+<!-- ================================
+Start page specific script blocks
+================================= -->
+{% block extend_footer %}{% endblock %}
+<!-- ================================
+END page specific script blocks
+================================= -->
+
+<!-- ================================
+Start Content
+================================= -->
+{% block content %}
+<!--===== projects =====-->
+<!-----projects section start----------->
+<center>
+    <div class="col-md-8 offset-md-2">
+        <div class="full">
+            <div class="big_blog">
+                <img class="img-blog" src="{{object.thumbnail.url}}" alt="#" />
+            </div>
+            <div class="blog_cont_2">
+            <h3>{{object.name|title}}</h3>
+            <p class="sublittle">{{object.timestamp.date}}</p>
+            <p> {{object.body|safe}}</p>
+        </div>
+        </div>
+    </div>
+</center>
+{% endblock %}
+<!-- ================================
+End Content
+================================= -->
+

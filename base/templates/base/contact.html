@@ -1,0 +1,59 @@
+{% extends 'base/layout.html' %}
+{% load static %}
+
+<!-- ================================
+Start SEO blocks
+================================= -->
+{% block title %}AlMustafa | Contact Me{% endblock %}
+{% block decription %}This is a portfolio website for AlMustafa Noureddin.{% endblock %}
+{% block keywords %}AlMustafa,AlMustafa Noureddin,Portfolio,portfolio website,data engineering,data engineer,data analysis, django{% endblock %}
+<!-- ================================
+END SEO blocks
+================================= -->
+<!-- ================================
+Start page specific CSS blocks
+================================= -->
+{% block extend_header %}{% endblock %}
+<!-- ================================
+END page specific CSS blocks
+================================= -->
+
+<!-- ================================
+Start page specific script blocks
+================================= -->
+{% block extend_footer %}{% endblock %}
+<!-- ================================
+END page specific script blocks
+================================= -->
+
+<!-- ================================
+Start Content
+================================= -->
+{% block content %}
+
+<main class="l-main">
+<!--===== CONTACT =====-->
+    <section class="contact section" id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact__container bd-grid">
+            <form method="POST" action="" class="contact__form">
+                {% csrf_token %}
+                <label for="name">Name</label>
+                {{form.name}}
+                <label for="email">Email</label>
+                {{form.email}}
+                <label for="subject">Subject</label>
+                {{form.subject}}
+                <label for="Message">Message</label>
+                {{form.message}}
+                <input type="button" value="Submit" class="contact__button button">
+            </form>
+        </div>
+    </section>
+</main>
+
+{% endblock %}
+<!-- ================================
+End Content
+================================= -->
+

@@ -1,0 +1,20 @@
+{% load static %}
+
+<!--===== FOOTER =====-->
+
+<footer class="footer">
+    <div class="footer__social">
+        <a href="#" class="footer__icon"><i class='bx bx-chevrons-up bx-lg'></i></a>
+    </div>
+    <center>
+        <p class="footer__title"><img src="{% static 'assets/img/img2.png'%}" alt="#"/></p>
+    </center>
+    <div class="footer__social">
+        {% for social in socials %}
+                            <a class="footer__icon" href="{{social.link}}" target="_blank" rel="author">
+                                {{social.icon_html|safe}}
+                            </a>
+        {% endfor %}
+    </div>
+    <p class="footer__copy">Copyright &#169; {% now 'Y' %}. All rigths reserved</p>
+</footer>

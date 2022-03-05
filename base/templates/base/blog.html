@@ -1,0 +1,72 @@
+{% extends 'base/layout.html' %}
+{% load static %}
+
+<!-- ================================
+Start SEO blocks
+================================= -->
+{% block title %}AlMustafa | BLog{% endblock %}
+{% block decription %}This is a portfolio website for AlMustafa Noureddin.{% endblock %}
+{% block keywords %}AlMustafa,AlMustafa Noureddin,Portfolio,portfolio website,data engineering,data engineer,data analysis, django{% endblock %}
+<!-- ================================
+END SEO blocks
+================================= -->
+<!-- ================================
+Start page specific CSS blocks
+================================= -->
+{% block extend_header %}{% endblock %}
+<!-- ================================
+END page specific CSS blocks
+================================= -->
+
+<!-- ================================
+Start page specific script blocks
+================================= -->
+{% block extend_footer %}{% endblock %}
+<!-- ================================
+END page specific script blocks
+================================= -->
+
+<!-- ================================
+Start Content
+================================= -->
+{% block content %}
+
+
+  <!--===== blog ======-->
+  <!-----blog section start----------->
+
+  <section class="blog-section" id="blog">
+    <div class="blog">
+      <h2 class="section-title">Blog</h2>
+      {% for object in object_list %}
+        {% if object.is_active %}
+          <div class="col gaap" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="100" data-aos-duration="400"> 
+            <div class="bcard bcard1">
+              <img src="{{object.thumbnail.url}}" class="featured-image"/>
+              <article class="bcard-body">
+                <header>
+                  <div class="title">
+                    <h3>{{object.name}}</h3>
+                  </div>
+                  <p class="meta">
+                    <span class="pre-heading">{{object.timestamp.date}}</span><br>
+                    <span class="author">{{object.author}}</span>
+                  </p>
+                  <ol>
+                    {{object.description}}
+                  </ol>
+                  <a href="{% url 'base:blog' slug=object.slug %}" class="more-button" >read</a>
+                </header>
+              </article>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+{% endblock %}
+<!-- ================================
+End Content
+================================= -->
+
