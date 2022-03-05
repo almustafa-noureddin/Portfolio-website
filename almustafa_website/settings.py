@@ -25,7 +25,7 @@ env = environ.Env(
 # Take environment variables from .env file
 #READ_DOT_ENV_FILE = env.bool('READ_DOT_ENV_FILE', default=False)
 #if READ_DOT_ENV_FILE:
-environ.Env.read_env()
+#environ.Env.read_env()
 
 # False if not in os.environ because of casting above
 DEBUG = False
@@ -97,7 +97,7 @@ DATABASES = {
         'NAME': env("DB_NAME"),
         'USER': env("DB_USER"),
         'PASSWORD': env("DB_PASSWORD"),
-        'HOST': env("DB_HOST"),
+        'HOST': env("DATABASE_URL"),
         'PORT': env("DB_PORT"),
     }
 }
