@@ -28,7 +28,7 @@ env = environ.Env(
 #    environ.Env.read_env()
 
 # False if not in os.environ because of casting above
-DEBUG = env('DEBUG')
+DEBUG = False
 
 # exception if SECRET_KEY not in os.environ
 SECRET_KEY = env('SECRET_KEY')
