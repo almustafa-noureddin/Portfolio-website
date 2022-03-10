@@ -38,16 +38,16 @@ Start Content
     <div class="col-md-8 offset-md-2">
         <div class="full">
             <div class="big_blog">
-                <img class="img-blog" src="{{object.thumbnail.url}}" alt="#" />
+                <img class="img-blog" src="{{project.thumbnail.url}}" alt="#" />
             </div>
             <div class="blog_cont_2">
-            <h3>{{object.name|title}}</h3>
+            <h3>{{project.name|title}}</h3>
             <h5>Topics:</h5>
-            {% for topic in object.skills_used.all %}
+            {% for topic in project.skills_used.all %}
             <h6>{{topic.skill}}, {{topic.skill_category}}</h6>
             {% endfor %}
-            <p class="sublittle">{{object.timestamp.date}}</p>
-            <p> {{object.body|safe}}</p>
+            <p class="sublittle">{{project.timestamp.date}}</p>
+            <p> {{project.body|safe}}</p>
         </div>
         </div>
     </div>

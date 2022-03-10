@@ -44,25 +44,29 @@ class ContactView(generic.FormView):
 		return super().form_valid(form)
 
 class ProjectView(generic.ListView):
-	model = Project
-	template_name = "base/projects.html"
-	paginate_by = 10
+    model = Project
+    template_name = "base/projects.html"
+    context_object_name = "projects"
+    paginate_by = 10
 
-	def get_queryset(self):
-		return super().get_queryset().filter(is_active=True)
+    def get_queryset(self):
+        return Project.get_queryset().filter(is_active=True)
 
 class ProjectDetailView(generic.DetailView):
 	model = Project
 	template_name = "base/project-detail.html"
+	context_object_name = "project"
 
 class BlogView(generic.ListView):
-	model = BlogPost
-	template_name = "base/blog.html"
-	paginate_by = 10
+    model = BlogPost
+    template_name = "base/blog.html"
+    context_object_name = "blogposts"
+    paginate_by = 10
 	
-	def get_queryset(self):
-		return super().get_queryset().filter(is_active=True)
+    def get_queryset(self):
+        return BlogPost.get_queryset().filter(is_active=True)
 
 class BlogDetailView(generic.DetailView):
 	model = BlogPost
 	template_name = "base/blog-detail.html"
+	context_object_name = "blogpost"

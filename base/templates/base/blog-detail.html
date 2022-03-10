@@ -38,19 +38,19 @@ Start Content
       <div class="full">
          <center>
          <div class="big-blog">
-            <img class="img-blog" src="{{object.thumbnail.url}}" alt="#" />
+            <img class="img-blog" src="{{blogpost.thumbnail.url}}" alt="#" />
          </div>
       </center>
          <div class="blog-cont-2">
-            <h3>{{object.name|title}}</h3>
+            <h3>{{blogpost.name|title}}</h3>
             <h5>Topics:</h5>
-            {% for topic in object.topic.all %}
+            {% for topic in blogpost.topic.all %}
             <h6>{{topic.skill}}, {{topic.skill_category}}</h6>
             {% endfor %}
-            <p class="sublittle">{{object.timestamp.date}}</p>
+            <p class="sublittle">{{blogpost.timestamp.date}}</p>
          </div>
          <div class="blog-cont">
-            <p> {{object.body|safe}}</p>
+            <p> {{blogpost.body|safe}}</p>
          </div>
       </div>
    </div>
