@@ -15,7 +15,7 @@ from pathlib import Path
 import os
 
 import environ
-import django_heroku
+#import django_heroku
 
 env = environ.Env(
     # set casting, default value
@@ -25,10 +25,10 @@ env = environ.Env(
 # Take environment variables from .env file
 #READ_DOT_ENV_FILE = env.bool('READ_DOT_ENV_FILE', default=False)
 #if READ_DOT_ENV_FILE:
-#environ.Env.read_env()
+environ.Env.read_env()
 
 # False if not in os.environ because of casting above
-DEBUG = False
+DEBUG = True
 
 # exception if SECRET_KEY not in os.environ
 SECRET_KEY = env('SECRET_KEY')
@@ -36,7 +36,7 @@ SECRET_KEY = env('SECRET_KEY')
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-ALLOWED_HOSTS = ['almustafa.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -64,7 +64,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
 
 ROOT_URLCONF = 'almustafa_website.urls'
 

@@ -1,0 +1,5 @@
+- set debug to false
+- comment out environ.Env.read_env() in line 28
+- uncomment import django_heroku in line 18
+- set allowed hosts to :ALLOWED_HOSTS = ['almustafa.herokuapp.com']
+- uncomment django_heroku.settings(locals()) in line 67
