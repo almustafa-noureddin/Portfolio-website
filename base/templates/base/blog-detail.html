@@ -43,6 +43,10 @@ Start Content
       </center>
          <div class="blog-cont-2">
             <h3>{{object.name|title}}</h3>
+            <h5>Topics:</h5>
+            {% for topic in object.topic.all %}
+            <h6>{{topic.skill}}, {{topic.skill_category}}</h6>
+            {% endfor %}
             <p class="sublittle">{{object.timestamp.date}}</p>
          </div>
          <div class="blog-cont">
