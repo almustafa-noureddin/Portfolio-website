@@ -609,7 +609,12 @@ about__container {
   color:var(--first-color);
   
 }
-
+.contact__button:hover {
+background-color: transparent;
+	border: 2px solid var(--fifth-color);
+	cursor: pointer;
+  color:var(--second-color)
+}
 /* ===== FOOTER =====*/
 .footer {
   background-color: var(--second-color);
