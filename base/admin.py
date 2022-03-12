@@ -1,10 +1,7 @@
 from django.contrib import admin
 from . models import (
-    BlogPost,
     UserProfile,
     ContactProfile,
-    Project,
-    BlogPost,
     SkillCategory,
     SkillAndCategoryRelation,
     Skill,
@@ -29,16 +26,6 @@ class ContactAdmin(admin.ModelAdmin):
 @admin.register(Media)
 class MediaAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
-
-@admin.register(Project)
-class ProjectAdmin(admin.ModelAdmin):
-    list_display = ('id','name','is_active')
-    readonly_fields = ('slug',)
-
-@admin.register(BlogPost)
-class BlogPostAdmin(admin.ModelAdmin):
-    list_display = ('id','name','is_active')
-    readonly_fields = ('slug',)
 
 @admin.register(Skill)
 class SkillAdmin(admin.ModelAdmin):

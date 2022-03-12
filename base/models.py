@@ -80,64 +80,6 @@ class UserProfile(models.Model):
     def __str__(self):
         return f'{self.user.first_name} {self.user.last_name}'
 
-class Project(models.Model):
-
-    class Meta:
-        verbose_name_plural = 'Projects'
-        verbose_name = 'Project'
-        ordering = ["timestamp"]
-
-    timestamp = models.DateTimeField(auto_now_add=True)
-    thumbnail = models.ImageField(blank=True, null=True, upload_to="projects")
-    name = models.CharField(max_length=200, blank=True, null=True)
-    description = models.CharField(max_length=200, blank=True, null=True)
-    body = RichTextField(blank=True, null=True)
-    slug = models.SlugField(null=True, blank=True)
-    skills_used = models.ManyToManyField(SkillAndCategoryRelation, blank=True)
-    github_link = models.URLField(max_length=200)
-    live_link = models.URLField(max_length=200)
-    is_active = models.BooleanField(default=True)
-
-    def save(self, *args, **kwargs):
-        if not self.id:
-            self.slug = slugify(self.name)
-        super(Project, self).save(*args, **kwargs)
-    
-    def __str__(self):
-        return self.name
-    def get_absolute_url(self):
-        return f"/projects/{self.slug}"
-
-
-class BlogPost(models.Model):
-
-    class Meta:
-        verbose_name_plural = 'Blog Posts'
-        verbose_name = 'Blog Post'
-        ordering = ["timestamp"]
-
-    timestamp = models.DateTimeField(auto_now_add=True)
-    thumbnail = models.ImageField(blank=True, null=True, upload_to="blog_posts")
-    name = models.CharField(max_length=200, blank=True, null=True)
-    author = models.CharField(max_length=200, blank=True, null=True)
-    summary = models.CharField(max_length=200, blank=True, null=True)
-    topic = models.ManyToManyField(SkillAndCategoryRelation, blank=True)
-    body = RichTextField(blank=True, null=True)
-    slug = models.SlugField(null=True, blank=True)
-    is_active = models.BooleanField(default=True)
-    
-    def save(self, *args, **kwargs):
-        if not self.id:
-            self.slug = slugify(self.name)
-        super(BlogPost, self).save(*args, **kwargs)
-
-    def __str__(self):
-        return self.name
-    
-    def get_absolute_url(self):
-        return f"/blog/{self.slug}"
-
-
 class Media(models.Model):
 
     class Meta:
