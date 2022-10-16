@@ -11,6 +11,7 @@
     <meta name="description" content="{% block description %}{% endblock %}" />
         <link id='favicon' rel="shortcut icon" href="{% static 'assets/img/favicon.ico'%}" type="image/x-png">
     <link rel="stylesheet" href="{% static 'assets/css/styles.css'%}">
+    <link id="theme-style" rel="stylesheet" type="text/css" href="">
 
         <!-- =====BOX ICONS===== -->
         
@@ -38,8 +39,43 @@
 
         <!--===== MAIN JS =====-->
         <script src="{% static 'assets/js/main.js'%}"></script>
+
+<script>
+            let theme = localStorage.getItem('theme')
+
+if(theme == null){
+	setTheme('light')
+}else{
+	setTheme(theme)
+}
+
+let themeDots = document.getElementsByClassName('theme-dot')
+
+
+for (var i=0; themeDots.length > i; i++){
+	themeDots[i].addEventListener('click', function(){
+		let mode = this.dataset.mode
+		console.log('Option clicked:', mode)
+		setTheme(mode)
+	})
+}
+
+function setTheme(mode){
+	if(mode == 'light'){
+		document.getElementById('theme-style').href = "{% static 'assets/css/styles.css'%}"
+	}
+
+	if(mode == 'dark'){
+		document.getElementById('theme-style').href = "{% static 'assets/css/dark.css'%}"
+	}
+
+
+	localStorage.setItem('theme', mode)
+}
+        </script>
     
-    
+
+
     <!-- ================================
     End Scripts
     ================================= -->

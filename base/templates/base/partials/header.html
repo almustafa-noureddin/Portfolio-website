@@ -4,7 +4,7 @@
     <nav class="nav bd-grid">
         <div>
             <a href="{% url 'base:home' %}" class="nav__logo">
-                <img src="{% static 'assets/img/img2.png'%}" alt="#"/>
+                <img src="{% static 'assets/img/icon5.png'%}" alt="#"/>
             </a>
         </div>
 
@@ -14,11 +14,19 @@
                 <li class="nav__item"><a href="#projects" class="nav__link">projects</a></li>
                 <li class="nav__item"><a href="https://almustafa.hashnode.dev/" class="nav__link">Blog</a></li>
                 <li class="nav__item"><a href="{% url 'base:contact' %}" class="nav__link">Contact</a></li>
+                <li class="nav__item">
+                <div id="theme-options-wrapper">
+                    <div data-mode="light" id="light-mode" class="theme-dot"><i class='bx bx-sun bx-md'></i></div>
+                    <div data-mode="dark" id="dark-mode" class="theme-dot"><i class='bx bx-moon bx-md'></i></div>
+                </div>
+                </li>
             </ul>
         </div>
 
         <div class="nav__toggle" id="nav-toggle">
             <i class='bx bx-menu'></i>
         </div>
+        
+        
     </nav>
 </header>
