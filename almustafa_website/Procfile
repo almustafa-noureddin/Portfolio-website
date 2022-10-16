@@ -1,1 +1,1 @@
-web: gunicorn 'almustafa_website.wsgi'
+web: web: python manage.py makemigration && python manage.py migrate && gunicorn 'almustafa_website.wsgi'
