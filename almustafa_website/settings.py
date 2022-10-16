@@ -15,7 +15,7 @@ from pathlib import Path
 import os
 
 import environ
-#import django_heroku
+import django_heroku
 
 env = environ.Env(
     # set casting, default value
@@ -64,7 +64,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-#django_heroku.settings(locals())
+django_heroku.settings(locals())
 
 ROOT_URLCONF = 'almustafa_website.urls'
 
